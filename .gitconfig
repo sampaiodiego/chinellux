@@ -1,0 +1,9 @@
+[user]
+	email = chinello@gmail.com
+	name = Diego Sampaio
+[core]
+	editor = vim
+[color]
+	ui = auto
+[push]
+	default = simple
