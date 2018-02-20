@@ -104,10 +104,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-ANDROID_HOME=/opt/android-sdk-linux/
-PATH=$PATH:$ANDROID_HOME/tools
+ANDROID_HOME=$HOME/.local/share/umake/android/android-sdk
+PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-export HISTFILESIZE=100000000
+export HISTFILESIZE=100000000 
 export HISTSIZE=100000
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
@@ -122,7 +122,7 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
-[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 ###-begin-npm-completion-###
 #
 # npm command completion script
@@ -181,12 +181,27 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/Downloads/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/path.bash.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/Downloads/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/completion.bash.inc"; fi
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/diegosampaio/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/home/diegosampaio/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/diegosampaio/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/home/diegosampaio/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+
+export PATH=/tmp/sencha/Sencha/Cmd/4.0.5.87:$PATH
+
+export SENCHA_CMD_3_0_0="/tmp/sencha//Sencha/Cmd/4.0.5.87"
+
+source $HOME/.kubectl
+
+export DRONE_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0Ijoic2FtcGFpb2RpZWdvIiwidHlwZSI6InVzZXIifQ.DvbqldvgJrgqfW2390y2-VxjBozAIj-9qLwrA0rQik0
+export DRONE_SERVER=http://ci.rocket.chat
+
+export GOPATH=$HOME/dev/go
+export GOBIN=$HOME/dev/go/bin
+
+export PATH=~/.local/bin:$GOBIN:$PATH
