@@ -7,13 +7,14 @@ Download Sublime Package  Controle: https://packagecontrol.io/installation
 ## General
 
 - Update font cache: `fc-cache -f -v`
+- Install [Vundle](https://github.com/VundleVim/Vundle.vim#quick-start)
 
 ## Packages
 
 - CPU indicator
 ```
-sudo add-apt-repository ppa:indicator-multiload/stable-daily 
-sudo apt-get update 
+sudo add-apt-repository ppa:indicator-multiload/stable-daily
+sudo apt-get update
 sudo apt-get install indicator-multiload
 ```
 
