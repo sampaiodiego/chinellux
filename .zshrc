@@ -77,7 +77,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose brew kubectl node osx)
+plugins=(git docker docker-compose brew kubectl node osx zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,3 +123,5 @@ unsetopt share_history
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export GEM_HOME="$HOME/.gem"
+
+source $HOME/.secrets
