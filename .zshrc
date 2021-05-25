@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/diegosampaio/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -124,4 +124,10 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export GEM_HOME="$HOME/.gem"
 
-source $HOME/.secrets
+bindkey '^[OM' accept-line
+
+[[ ! -f $HOME/.secrets ]] || source $HOME/.secrets
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
